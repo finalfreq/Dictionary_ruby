@@ -23,4 +23,7 @@ post('/') do
   erb(:index)
 end
 
-get('/word/:id')
+get('/word/:id') do
+  @word = Word.find(params.fetch('id'))
+  erb(:word)
+end
