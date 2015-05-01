@@ -1,3 +1,17 @@
 <h1> Current word and its definitions <h1>
 
-<h3><%= @word.word %></h3>
+<h3><%= @word.word %>
+  <ul>
+    <li><%= @definition %></li>
+  </ul>
+</h3>
+
+<h3>Add a definition!</h3>
+
+<form id="add_definition" action="/word/:id" method="post">
+  <div class="form-group">
+    <label for="definition">definition</label>
+    <input id="definition" type="text" name="definition" class="form-control">
+  </div>
+  <button type="submit" class="btn-primary">Add</button>
+</form>
