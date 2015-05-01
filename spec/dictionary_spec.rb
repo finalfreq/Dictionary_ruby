@@ -50,7 +50,7 @@ describe(Word) do
       test_word = Word.new('word')
       test_definition = Definition.new('an element of speech or writing')
       test_word.define(test_definition)
-      expect(test_word.definition()).to(start_with(["an element of speech or writing"]))
+      expect(test_word.definitions()).to(start_with(["an element of speech or writing"]))
     end
   end
 
@@ -64,37 +64,11 @@ describe(Word) do
 end
 
 describe(Definition) do
-  before() do
-    Definition.clear()
-  end
 
   describe('#define') do
     it('will return the definition') do
       test_definition = Definition.new('This is a definition')
       expect(test_definition.definition()).to(eq("This is a definition"))
-    end
-  end
-
-  describe('#save') do
-    it('will save definition') do
-      test_definition = Definition.new('This is a definition')
-      test_definition.save
-      expect(Definition.all).to(start_with(test_definition))
-    end
-  end
-
-  describe('.all') do
-    it('will be empty at first') do
-      test_definition = Definition.new('This is a definition')
-      expect(Definition.all).to(eq([]))
-    end
-  end
-
-  describe('.clear') do
-    it('removes all stored definitions') do
-      test_definition = Definition.new('This is a definition')
-      Definition.clear()
-      expect(Definition.all).to(eq([]))
     end
   end
 end
