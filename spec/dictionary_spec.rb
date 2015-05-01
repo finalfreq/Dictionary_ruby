@@ -20,6 +20,8 @@ describe(Word) do
   describe('save') do
     it('will save the word into list of words') do
       test_word = Word.new('word')
+      test_word.save()
+      expect(Word.all).to start_with(test_word)
     end
   end
 end
