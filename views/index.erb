@@ -1,0 +1,11 @@
+<h1 class="page-header text-center">Here is your custom dictionary!</h1>
+
+<ul>
+  <% @words.each() do |word| %>
+  <li><%= word.word() %></li>
+  <% end %>
+</ul>
+
+
+
+<a href="/add_word">Add a word to dictionary </a>

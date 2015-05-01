@@ -53,6 +53,14 @@ describe(Word) do
       expect(test_word.definition()).to(start_with(["an element of speech or writing"]))
     end
   end
+
+  describe('.find') do
+    it('will find word from list by id #') do
+      test_word = Word.new('word')
+      test_word.save()
+      expect(Word.find(1)).to(eq([test_word]))
+    end
+  end
 end
 
 describe(Definition) do

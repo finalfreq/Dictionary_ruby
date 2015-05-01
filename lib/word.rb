@@ -22,7 +22,13 @@ class Word
 
   def self.clear
     @@words = []
+  end
 
+  def self.find(identification)
+    found_word = nil
+    @@words.each do |word|
+      found_word = word if word.id == identification
+    end
   end
 
 end
