@@ -1,5 +1,6 @@
 class Word
   @@words = []
+
   attr_reader(:word, :definitions, :id)
 
   def initialize(word)
