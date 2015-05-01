@@ -1,11 +1,11 @@
 class Word
   @@words = []
 
-  attr_reader(:word)
+  attr_reader(:word, :definition)
 
   def initialize(word)
     @word = word
-    @definition = ''
+    @definition = []
   end
 
   def save
@@ -14,9 +14,11 @@ class Word
 
   def self.all
     @@words
-
   end
 
+  def define(definition)
+    @definition.push(definition)
+  end
 
 
 end
