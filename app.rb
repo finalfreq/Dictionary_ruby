@@ -11,7 +11,7 @@ get('/') do
 end
 
 get('/add_word') do
-
+  # @word = params.fetch('id')
   erb(:add_word)
 end
 
@@ -24,6 +24,6 @@ post('/') do
 end
 
 get('/word/:id') do
-  @word = Word.find(params.fetch('id'))
+  @word = Word.find(params.fetch('id').to_i())
   erb(:word)
 end

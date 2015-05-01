@@ -58,7 +58,7 @@ describe(Word) do
     it('will find word from list by id #') do
       test_word = Word.new('word')
       test_word.save()
-      expect(Word.find(1)).to(eq([test_word]))
+      expect(Word.find(1)).to(eq(test_word))
     end
   end
 end

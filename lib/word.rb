@@ -5,7 +5,7 @@ class Word
   def initialize(word)
     @word = word
     @definition = []
-    @id = @@words.length() + 1
+    @id = @@words.length().+(1)
   end
 
   def save
@@ -29,6 +29,7 @@ class Word
     @@words.each do |word|
       found_word = word if word.id == identification
     end
+    found_word
   end
 
 end
