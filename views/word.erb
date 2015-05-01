@@ -1,9 +1,16 @@
 <h1> Current word and its definitions <h1>
 
-<h3><%= @word.word %>
-  <ul>
-    <li><%= @definition %></li>
-  </ul>
+<h3><%= @word.word %></h3>
+
+<% if @word.definitions.empty?() %>
+  <h4>You haven't added a definition yet!</h4>
+<% end %>
+<h3>
+  <ol>
+    <% @word.definitions.each() do |definition| %>
+    <li><%= definition %></li>
+    <% end %>
+  </ol>
 </h3>
 
 <h3><a href="/word/<%= @word.id() %>/add_definition">Add a definition!</a></h3>

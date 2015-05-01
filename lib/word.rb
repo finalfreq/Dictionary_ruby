@@ -1,10 +1,10 @@
 class Word
   @@words = []
-  attr_reader(:word, :definition, :id)
+  attr_reader(:word, :definitions, :id)
 
   def initialize(word)
     @word = word
-    @definition = []
+    @definitions = []
     @id = @@words.length().+(1)
   end
 
@@ -13,7 +13,7 @@ class Word
   end
 
   def define(definition)
-    @definition.push(definition.definition())
+    @definitions.push(definition.definition())
   end
 
   def self.all
