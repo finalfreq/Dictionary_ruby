@@ -7,7 +7,7 @@ require('pry')
 
 get('/') do
   @words = Word.all()
-  erb(:index)
+  erb(:word_list)
 end
 
 get('/add_word') do
@@ -16,7 +16,7 @@ end
 
 get('/word/:id') do
   @word = Word.find(params.fetch('id').to_i())
-  erb(:word)
+  erb(:word_info)
 end
 
 get('/word/:id/add_definition') do
@@ -28,7 +28,7 @@ post('/word') do
   @definition = Definition.new(params.fetch('definition'))
   @word = Word.find(params.fetch('word_id').to_i())
   @definitions = @word.define(@definition)
-  erb(:word)
+  erb(:word_info)
 end
 
 post('/') do
@@ -36,5 +36,5 @@ post('/') do
   word = Word.new(word)
   word.save()
   @words = Word.all()
-  erb(:index)
+  erb(:word_list)
 end
