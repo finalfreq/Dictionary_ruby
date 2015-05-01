@@ -1,5 +1,4 @@
 class Definition
-  @@definitions = []
 
   attr_reader(:definition)
 
