@@ -19,6 +19,8 @@ ruby app.rb
 Navigate in your browser to localhost:4567. In the forms provided, input the word you would like to
 add to your own dictionary. After adding to dictionary you can click on the word you added and the next page shows the details about the word. On that page you can hit "add definition" and that will allow you to define the word and update your dictionary.
 
+You may also access this app from Heroku @ https://james-dictionary.herokuapp.com.
+
 
 ### Bug reports
 
