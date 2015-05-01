@@ -4,12 +4,12 @@ li {
 }
 </style>
 
-<h1> Current word and its definitions <h1>
+<h1> Current word and its definitions <h1> </br>
 
 <h3><%= @word.word %></h3>
 
 <% if @word.definitions.empty?() %>
-  <h4>You haven't added a definition yet!<a href="/word/<%= @word.id() %>/add_definition">Add definition!</a></h4>
+  <h4>You haven't added a definition yet! <a href="/word/<%= @word.id() %>/add_definition"> Add definition!</a></h4>
 <% end %>
 
 <h3>
@@ -21,5 +21,5 @@ li {
 </h3>
 
 <% if ! @word.definitions.empty?() %>
-<h3><a href="/word/<%= @word.id() %>/add_definition">Add a definition!</a></h3>
+<h3><a href="/word/<%= @word.id() %>/add_definition"> Add a definition!</a></h3>
 <% end %>
