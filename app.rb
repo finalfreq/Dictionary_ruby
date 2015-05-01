@@ -27,12 +27,14 @@ get('/word/:id') do
   erb(:word)
 end
 
-post('/word/:id') do
-  id = params.fetch('id')
-  definition = params.fetch('definition')
-  definition = Definition.new(definition)
-  word = Word.find(params.fetch(id).to_i())
-  @definitions = word.define(definition)
-  binding.pry
+get('/word/:id/add_definition') do
+  @word = Word.find(params.fetch('id').to_i())
+  erb(:definition_form)
+end
+
+post('/word') do
+  @definition = Definition.new(params.fetch('definition'))
+  @word = Word.find(params.fetch('word_id').to_i())
+  @definition = @word.define(@definition)
   erb(:word)
 end

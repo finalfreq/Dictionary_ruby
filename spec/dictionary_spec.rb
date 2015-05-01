@@ -89,4 +89,12 @@ describe(Definition) do
       expect(Definition.all).to(eq([]))
     end
   end
+
+  describe('.clear') do
+    it('removes all stored definitions') do
+      test_definition = Definition.new('This is a definition')
+      Definition.clear()
+      expect(Definition.all).to(eq([]))
+    end
+  end
 end

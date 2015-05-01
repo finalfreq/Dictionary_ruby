@@ -6,12 +6,4 @@
   </ul>
 </h3>
 
-<h3>Add a definition!</h3>
-
-<form id="add_definition" action="/word/:id" method="post">
-  <div class="form-group">
-    <label for="definition">definition</label>
-    <input id="definition" type="text" name="definition" class="form-control">
-  </div>
-  <button type="submit" class="btn-primary">Add</button>
-</form>
+<h3><a href="/word/<%= @word.id() %>/add_definition">Add a definition!</a></h3>
