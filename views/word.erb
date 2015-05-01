@@ -1,16 +1,25 @@
+<style>
+li {
+  font-size: 20px;
+}
+</style>
+
 <h1> Current word and its definitions <h1>
 
 <h3><%= @word.word %></h3>
 
 <% if @word.definitions.empty?() %>
-  <h4>You haven't added a definition yet!</h4>
+  <h4>You haven't added a definition yet!<a href="/word/<%= @word.id() %>/add_definition">Add definition!</a></h4>
+
 <% end %>
+
 <h3>
   <ol>
     <% @word.definitions.each() do |definition| %>
-    <li><%= definition %></li>
+    <li><%= definition %></li> </br>
     <% end %>
   </ol>
 </h3>
-
+<% if ! @word.definitions.empty?() %>
 <h3><a href="/word/<%= @word.id() %>/add_definition">Add a definition!</a></h3>
+<% end %>
